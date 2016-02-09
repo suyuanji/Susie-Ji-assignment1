@@ -1,3 +1,4 @@
+//susie ji
 var ParticleSystem = [];
 var attractors = [];
 var originalRadius,radius;
