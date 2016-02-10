@@ -8,14 +8,11 @@ function setup() {
     frameRate(30);
     colorMode(HSB, 360, 100, 100, 100);
     background(0);
-    originalRadius = (width > height ? height : width) / 2 - 50;
+    originalRadius = 300;
     radius = originalRadius;
     for(var i = 0;i < 100; i++) {
-        var angle = Math.PI  * 2 / 100 * i;
-        var _x = radius * Math.cos(angle) + width / 2;
-        var _y = radius * Math.sin(angle) + height / 2;
         var strength = random(2,6)
-        var att = new Attractor(createVector( _x, _y), strength);
+        var att = new Attractor(createVector(0,0), strength);
         attractors.push(att);
     }
 }
@@ -125,7 +122,7 @@ function createMightyParticles() {
         var vel = createVector(1, 0);
         vel.rotate(random(0, Math.PI * 2));
         vel.mult(random(5, 8));
-        var newBorn = new Particle(at, pos, vel, hue);
+        var newBorn = new Particle(pos, vel, hue);
         ParticleSystem.push(newBorn);
     }
 }
